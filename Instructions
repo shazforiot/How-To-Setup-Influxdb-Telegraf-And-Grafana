@@ -1,0 +1,47 @@
+
+Steps for installation of InfluxDB 2.0
+
+wget https://dl.influxdata.com/influxdb/releases/influxdb2-2.0.7-linux-amd64.tar.gz
+
+tar xvzf influxdb2-2.0.7-linux-amd64.tar.gz
+
+sudo cp influxdb2-2.0.7-linux-amd64/{influx,influxd} /usr/local/bin/
+
+./influxd
+
+http://ipaddress:8086/
+
+===================================================================
+
+Steps for installation of Telegraf
+
+
+wget https://dl.influxdata.com/telegraf/releases/telegraf-1.19.1_linux_amd64.tar.gz
+tar xvzf telegraf-1.19.1_linux_amd64.tar.gz
+cd telegraf-1.19.1_linux_amd64/usr/bin
+
+telegraf config > telegraf.conf
+
+mv telegraf.conf /etc/telegraf/
+
+vi telegraf.conf
+
+Search for outputs.influxdb
+
+======================================================================
+
+Steps for installation of Grafana
+
+wget https://dl.grafana.com/oss/release/grafana-8.0.6.linux-amd64.tar.gz
+tar -zxvf grafana-8.0.6.linux-amd64.tar.gz
+
+./bin/grafana-server web
+
+===================================================================
+
+Reference links: 
+
+https://docs.influxdata.com/telegraf/v1.19/introduction/installation/?t=RedHat+%26amp%3B+CentOS
+https://docs.influxdata.com/influxdb/v2.0/install/?t=Linux
+https://grafana.com/grafana/download?platform=linux
+https://docs.influxdata.com/influxdb/v2.0/query-data/get-started/
